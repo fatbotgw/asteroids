@@ -1,13 +1,18 @@
 import pygame
-from constants import *
+
+from constants import *  # noqa: F403
+
 
 def main():
     print("Starting Asteroids!")
-    print(f"Screen width: {SCREEN_WIDTH}")
-    print(f"Screen height: {SCREEN_HEIGHT}")
+    print(f"Screen width: {SCREEN_WIDTH}")  # noqa: F405
+    print(f"Screen height: {SCREEN_HEIGHT}")  # noqa: F405
     pygame.init()
     
-    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))  # noqa: F405
+
+    game_clock = pygame.time.Clock()
+    dt = 0
 
     while True:
         for event in pygame.event.get():
@@ -16,6 +21,7 @@ def main():
 
         screen.fill(color='black')
         pygame.display.flip()
+        dt = game_clock.tick(60) / 1000
 
 
 
