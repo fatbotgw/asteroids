@@ -1,6 +1,7 @@
 import pygame
 
 from constants import *  # noqa: F403
+from player import Player
 
 
 def main():
@@ -14,14 +15,21 @@ def main():
     game_clock = pygame.time.Clock()
     dt = 0
 
+    x = SCREEN_WIDTH / 2
+    y = SCREEN_HEIGHT / 2
+    player = Player(x, y)
+
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
 
         screen.fill(color='black')
+        player.draw(screen)
         pygame.display.flip()
         dt = game_clock.tick(60) / 1000
+
+        
 
 
 
