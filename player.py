@@ -23,7 +23,6 @@ class Player(CircleShape):
         # sub-classes must override
         # polygon(surface, color, points) -> Rect
         polygon(screen, color="white", points=self.triangle(), width=2)
-        pass
 
     def rotate(self, dt):
         self.rotation += PLAYER_TURN_SPEED * dt  # noqa: F405
