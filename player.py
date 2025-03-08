@@ -55,14 +55,15 @@ class Player(CircleShape):
             bullet.velocity *= PLAYER_SHOOT_SPEED  # noqa: F405
             self.shot_timer = PLAYER_SHOOT_COOLDOWN  # noqa: F405
 
-        
 
 class Shot(CircleShape):
     def __init__(self, x, y, radius):
         super().__init__(x, y, radius)
 
     def draw(self, screen):
-        pygame.draw.circle(screen, color="white", center=(self.position), radius=SHOT_RADIUS, width=2)  # noqa: F405
+        pygame.draw.circle(
+            screen, color="white", center=(self.position), radius=SHOT_RADIUS, width=2
+        )  # noqa: F405
 
     def update(self, dt):
         self.position += self.velocity * dt
